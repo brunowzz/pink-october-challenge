@@ -1,5 +1,73 @@
+@import "./variables.scss";
+@import "./mixin.scss";
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: $font-sans;
+}
+
+.header {
+  @include items-center;
+  justify-content: space-between;
+  height: 118px;
+  background: $bg-primary;
+  @include lateral-spacing;
+
+  &__logo {
+    @include items-center;
+    gap: 4px;
+
+    &__image {
+      @include size(100px, 100px);
+
+      @include for-tablet-portrait-up {
+        @include size(70px, 70px);
+      }
+    }
+
+    &__title {
+      @include font-config(28px, 400, $text-primary);
+
+      @include for-desktop {
+        font-size: 24px;
+      }
+
+      @include for-tablet-landscape-up {
+        font-size: 22px;
+      }
+    }
+  }
+
+  &__nav {
+    @include items-center;
+    gap: 80px;
+
+    &__links {
+      text-decoration: none;
+      @include link-animation;
+      @include font-config(28px, 400, $text-primary);
+
+      @include for-desktop {
+        font-size: 18px;
+      }
+
+      @include for-tablet-landscape-up {
+        font-size: 16px;
+      }
+    }
+
+    @include for-desktop {
+      gap: 20px;
+    }
+
+    @include for-tablet-landscape-up {
+      gap: 12px;
+    }
+
+    @include for-tablet-portrait-up {
+      display: none;
+    }
+  }
 }

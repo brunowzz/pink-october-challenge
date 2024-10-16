@@ -1,0 +1,72 @@
+@mixin lateral-spacing {
+  padding: 0 8vw;
+
+  @media (max-width: 1366px) {
+    padding: 0 32px;
+  }
+}
+
+@mixin items-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin size($width, $heigth) {
+  width: $width;
+  height: $heigth;
+}
+
+@mixin link-animation {
+  background: linear-gradient(to right, $bg-primary, $bg-primary),
+    linear-gradient(to right, #ff8aa3, #ffcccb, #ffdab9);
+  background-size: 100% 3px, 0 3px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+
+  &:hover {
+    background-size: 0 3px, 100% 3px;
+  }
+}
+
+@mixin font-config($size, $weight, $color) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin for-phone-only {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-portrait-up {
+  @media (max-width: 680px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-landscape-up {
+  @media (max-width: 850px) {
+    @content;
+  }
+}
+
+@mixin for-desktop {
+  @media (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin for-desktop-up {
+  @media (max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) {
+    @content;
+  }
+}
