@@ -176,3 +176,48 @@
     }
   }
 }
+
+.footer {
+  @include items-center;
+  justify-content: space-between;
+  @include lateral-spacing;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  background: $bg-primary;
+
+  &__nav-links {
+    flex: 1;
+    @include items-center;
+    gap: 12px;
+    text-decoration: none;
+
+    img {
+      @include size(48px, 48px);
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+    @include font-config(16px, 400, $text-primary);
+    text-align: center;
+
+    @include for-tablet-portrait-up {
+      text-align: left;
+    }
+  }
+
+  &__image {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+  }
+
+  @include for-tablet-portrait-up {
+    align-items: flex-start;
+    flex-direction: column-reverse;
+    gap: 12px;
+  }
+}
