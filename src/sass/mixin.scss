@@ -1,8 +1,10 @@
 @mixin lateral-spacing {
-  padding: 0 8vw;
+  padding-left: 8vw;
+  padding-right: 8vw;
 
   @media (max-width: 1366px) {
-    padding: 0 32px;
+    padding-left: 32px;
+    padding-right: 32px;
   }
 }
 

@@ -71,3 +71,83 @@
     }
   }
 }
+
+.container {
+  &__about {
+    @include items-center;
+    justify-content: space-between;
+    gap: 32px;
+    @include lateral-spacing;
+    background: $bg-secondary;
+
+    &__text {
+      width: 50%;
+      margin: 24px 0;
+      @include font-config(24px, 400, $text-secondary);
+
+      @include for-desktop-up {
+        font-size: 20px;
+      }
+
+      @include for-tablet-portrait-up {
+        width: 100%;
+        text-align: center;
+        margin: 0 0 24px 0;
+      }
+    }
+
+    &__image {
+      @include size(365px, 365px);
+      margin: 24px 0;
+      object-fit: cover;
+
+      @include for-tablet-portrait-up {
+        @include size(100%, 100%);
+      }
+    }
+
+    @include for-tablet-portrait-up {
+      flex-direction: column-reverse;
+      gap: 8px;
+    }
+  }
+
+  &__awareness {
+    @include items-center;
+    justify-content: space-between;
+    gap: 32px;
+    @include lateral-spacing;
+    background: $bg-primary;
+
+    &__text {
+      width: 50%;
+      margin: 24px 0;
+      @include font-config(24px, 400, $text-primary);
+
+      @include for-desktop-up {
+        font-size: 20px;
+      }
+
+      @include for-tablet-portrait-up {
+        width: 100%;
+        text-align: center;
+        margin: 0 0 24px 0;
+      }
+    }
+
+    &__image {
+      @include size(50%, auto);
+      object-fit: cover;
+      margin: 24px 0;
+
+      @include for-tablet-portrait-up {
+        @include size(100%, 100%);
+      }
+    }
+
+    @include for-tablet-portrait-up {
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
+}
